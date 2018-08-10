@@ -1,0 +1,22 @@
+<ion-header>
+ <!-- Advanced: explicity set the icon for each platform -->
+ <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"(click)="Back()"></ion-icon>
+
+
+
+    <ion-icon ios="ios-podium-outline" md="md-podium" (click)="City1()"class="red"></ion-icon>
+   
+  <!-- Advanced: explicity set the icon for each platform -->
+ 
+</ion-header>
+<ion-content class="back" padding>
+   
+  
+<button ion-button color="Primary" round outline block (click)="forecast(location.value)">Forecast</button>
+  </ion-list>
+  <p>Mon Tues Wed Thur Fri Sat</p>
+  
+{{temperature}} {{temperature1}} {{temperature2}} {{temperature3}} {{temperature4}}
+
+ 
+</ion-content>

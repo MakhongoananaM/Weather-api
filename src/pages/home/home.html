@@ -1,18 +1,32 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  
+  <ion-content class="bck" padding>
+    <ion-icon ios="ios-podium-outline" md="md-podium" (click)="City()"></ion-icon>
+   
+    <!-- Advanced: explicity set the icon for each platform -->
+          <!-- <button (click)="getWeather(cityname.value)">GET WEATHER</button> -->
+         <br>
+          {{ item }}
+            
+    <div class="center">
+      <h1>{{name}}</h1>
+     
+      <P>Today</P>
+      <div class="tem">
+        <h2 class="tem">{{temp}}</h2>
+        <h3 class="tem2">Humidity {{main}}</h3>
+      </div>  
+      <br> <br>
+      <div class="fix">
+      <div class="round"></div>
+      <img src="../../assets/imgs/sun3.png" alt="" > 
+      <h1>{{p}}</h1>
+      <br>
+      </div>  
+      <!-- <button ion-button (click)="findweather()" ></button> -->
+    </div>
+    <br><br><br>
+    <button class="bat" ion-button color="light" outline  (click)="Start()">Weather</button>
+    <br> <br><br>
+    <a href="https://www.accuweather.com"class="ide">AccuWeather </a>
 </ion-content>
+
