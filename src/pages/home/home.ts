@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { ForecastProvider } from '../../providers/forecast/forecast';
 import { WeeklyPage } from '../weekly/weekly';
 import { ManagePage } from '../manage/manage';
-import { Geolocation } from '@ionic-native/geolocation'
 
 @Component({
   selector: 'page-home',
@@ -20,6 +19,7 @@ export class HomePage {
   name;
   temp;
   icon;
+  img;
   public open = false;
   constructor(public navCtrl: NavController, private provFore: ForecastProvider) {
    this.getWeather('Johannesburg');
@@ -41,22 +41,48 @@ export class HomePage {
     });
   }
 
-
-  
-
   initializeItems() {
     this.items =['Port Elizabeth','Pietermaritzburg','East London','Polokwane','Rustenburg','Welkom','Ladysmith','Potchefstroom','Richards Bay','Kimberley','Mahikeng','Klerksdorp','Paarl','Mthatha','Pinetown','Thohoyandou','Grahamstown','Borksburg',
     'Vereeniging','Sasolburg','Centurion','Upington','Oudtshoorn','Secunda','Uitenhage','Worcester','Krugersdorp','Benoni','Newcastle','Bellville','Khayelitsha','Graaff-Reinet','Ulundi','Tembisa','Bhisho','Johanneburg','Soweto'
     ];
     
+    if (this.icon === "01d"){
+      this.img = '../../assets/imgs/sun.png';
+       // alert('01')
+       console.log(this.img + "2");
+      }
+      else if (this.icon === "10d") {
+       this.img = '../../assets/imgs/rain.png';
+        alert('10')
+       console.log(this.img + "2");
+
+     } else if (this.icon === "02d") {
+       this.img = '../../assets/imgs/clouds.png';
+        alert('10')
+       console.log(this.img + "4");
+     } else if (this.icon === "50d") {
+       this.img = '../../assets//imgs/misty.png';
+        alert('10')
+       console.log(this.img + "5");
+     } else if (this.icon === "04d") {
+       this.img = '../../assets//imgs//broken clouds.PNG';
+        alert('10')
+       console.log(this.img + "3");
+     } else if (this.icon === "09d") {
+       this.img = '../../assets/imgs/few clouds.png';
+        alert('10')
+       console.log(this.img + "3");
+     }
   }
   Start(){
     this.navCtrl.push(WeeklyPage);
   }
   City(){
-    this.navCtrl.push(ManagePage)
+    this.navCtrl.push(ManagePage);
   }
-  }
+
+    
+  
   // getItems(ev: any) {
   //   this.initializeItems();
   //   // set val to the value of the searchbar
@@ -86,5 +112,4 @@ export class HomePage {
   //   });
   // }
 
-
-
+}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { WeeklyPage } from '../weekly/weekly';
 import { objWeather } from '../../app/objWeather';
-import weatherArr from '../../app/arryWeather';
+import weatherArr from '../../app/arryWeather'
 
 
 
@@ -20,21 +20,18 @@ import weatherArr from '../../app/arryWeather';
 })
 export class ManagePage {
   wether: any;
-  private readonly newProperty = this.temperature;
+  //private readonly newProperty = this.temperature;
+  temperature: string;
 
   arr(arg0: any): any {
     throw new Error("Method not implemented.");
   }
-  temp1: any;
-  wind: any;
-  humidity: any;
-  place: any;
-  temperature: string;
-  temperature1: any;
-  temperature2: any;
-  temperature3: any;
-  temperature4: any;
-
+  temp1 ;
+  wind;
+  humidity;
+  place;
+  name;
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -66,25 +63,6 @@ export class ManagePage {
  
   }
  
-  forecast(cityname)
-  {
-    this.wether.getForecast(cityname).then((data:any) =>{
-   //  this.arr.getForcast(this.name).then((infor: any) => {
- 
-       this.temperature = data.list[0].main.temp_max;
-       this.temperature1 = data.list[8].main.temp_max;
-       this.temperature2 = data.list[16].main.temp_max;
-       this.temperature3 = data.list[24].main.temp_max;
-       this.temperature4 = data.list[32].main.temp_max;
- 
-       this.temperature = (this.temperature - 273.15).toFixed() + "°c"
-       this.temperature1 = (this.temperature1 - 273.15).toFixed() + "°c"
-       this.temperature2 = (this.temperature2 - 273.15).toFixed() + "°c"
-       this.temperature3 = (this.temperature3 - 273.15).toFixed() + "°c"
-       this.temperature4 = (this.temperature4 - 273.15).toFixed() + "°c"
-       console.log(data);
-     
-     });
  
   }
-}
+

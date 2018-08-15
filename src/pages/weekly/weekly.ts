@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { ForecastProvider } from '../../providers/forecast/forecast';
-import { objWeather} from '../../app/objWeather';
+//import { objWeather} from '../../app/objWeather';
 import { Geolocation } from '@ionic-native/geolocation';
 import weatherArr from '../../app/arryWeather';
 import { ManagePage } from '../manage/manage';
@@ -75,5 +75,26 @@ export class WeeklyPage {
 Back(){
   this.navCtrl.push(HomePage)
 }
+forecast(cityname)
+    {
+      this.wether.getForecast(cityname).then((data:any) =>{
+      // this.arr.getForcast(this.name).then((infor: any) => {
 
-}
+         this.temperature = data.list[0].main.temp_max;
+         this.temperature1 = data.list[8].main.temp_max;
+         this.temperature2 = data.list[16].main.temp_max;
+         this.temperature3 = data.list[24].main.temp_max;
+         this.temperature4 = data.list[32].main.temp_max;
+   
+   
+         this.temperature = (this.temperature - 273.15).toFixed() + "°c"
+         this.temperature1 = (this.temperature1 - 273.15).toFixed() + "°c"
+         this.temperature2 = (this.temperature2 - 273.15).toFixed() + "°c"
+         this.temperature3 = (this.temperature3 - 273.15).toFixed() + "°c"
+         this.temperature4 = (this.temperature4 - 273.15).toFixed() + "°c"
+         console.log(data);
+       
+   
+   
+       });
+      }}

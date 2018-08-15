@@ -11,22 +11,28 @@
       <h1>{{name}}</h1>
      
       <P>Today</P>
+      <br>
       <div class="tem">
         <h2 class="tem">{{temp}}</h2>
         <h3 class="tem2">Humidity {{main}}</h3>
-      </div>  
-      <br> <br>
+      </div> 
+      <br><br>
       <div class="fix">
-      <div class="round"></div>
-      <img src="../../assets/imgs/sun3.png" alt="" > 
+        <br><br>
+      <div class="round" >
+          <img src="{{img}}" > 
+          
+      </div>
+      <br>
       <h1>{{p}}</h1>
       <br>
       </div>  
+    
       <!-- <button ion-button (click)="findweather()" ></button> -->
     </div>
     <br><br><br>
     <button class="bat" ion-button color="light" outline  (click)="Start()">Weather</button>
-    <br> <br><br>
+    <br> <br>
     <a href="https://www.accuweather.com"class="ide">AccuWeather </a>
 </ion-content>
 
